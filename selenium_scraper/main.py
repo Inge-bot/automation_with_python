@@ -1,8 +1,10 @@
+"Create Chrome driver and automatically scrape html text"
+import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 import variables
 
-service = Service(variables.driver_path)
+service = Service(variables.DRIVER_PATH)
 
 def create_driver():
     "Create Chrome driver"
@@ -25,10 +27,17 @@ def create_driver():
     driver.get("http://automated.pythonanywhere.com")
     return driver
 
-def main():
-    "Scrape html element text"
-    driver = create_driver()
-    element = driver.find_element(by="xpath", value="/html/body/div[1]/div/h1[1]")
-    return element.text
+def clean_text(text):
+    "Extract temperature from text and convert into float"
+    output = float(text.split(": ")[1])
+    return output
 
+if __name__ == '__main__':
+    def main():
+        "Scrape html element's text"
+        driver = create_driver()
+        # get dynamic element by staying on page for 2secs
+        time.sleep(2)
+        element = driver.find_element(by="xpath", value="/html/body/div[1]/div/h1[2]")
+        return clean_text(element.text)
 print(main())
