@@ -5,6 +5,7 @@ import variables
 service = Service(variables.driver_path)
 
 def create_driver():
+    "Create Chrome driver"
     # driver configurations - options to make browsing easier
     options = webdriver.ChromeOptions()
     # remove possible interference of infobars
@@ -25,6 +26,7 @@ def create_driver():
     return driver
 
 def main():
+    "Scrape html element text"
     driver = create_driver()
     element = driver.find_element(by="xpath", value="/html/body/div[1]/div/h1[1]")
     return element.text
