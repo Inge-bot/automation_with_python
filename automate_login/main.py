@@ -29,11 +29,6 @@ def create_driver():
     driver.get("http://automated.pythonanywhere.com/login/")
     return driver
 
-# def clean_text(text):
-#     "Extract temperature from text and convert into float"
-#     output = float(text.split(": ")[1])
-#     return output
-
 if __name__ == '__main__':
     def main():
         "Scrape html element's text"
@@ -43,8 +38,9 @@ if __name__ == '__main__':
         time.sleep(1)
         # select password field and input password; click on enter
         driver.find_element(by="id", value="id_password").send_keys("automatedautomated" + Keys.RETURN)
+        time.sleep(1)
+        # navigate to the home page
+        driver.find_element(by="xpath", value="/html/body/nav/div/a").click()
         # print current url after logging in
         print(driver.current_url)
-        
-
 print(main())
