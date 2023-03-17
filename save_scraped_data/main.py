@@ -1,6 +1,6 @@
 "Scrape data and save to file"
 import time
-import datetime
+from datetime import datetime as dt
 import sched
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -42,19 +42,10 @@ def clean_text(text):
     output = float(text.split(": ")[1])
     return output
 
-# create file and save to text file every 2 seconds
-def file_name():
-    "Create dynamic file name with date and time"
-    now = datetime.datetime.now()
-    time_now = now.strftime('%Y-%m-%d.%H-%M-%S')
-    print(time_now)
-    return time_now
-
 def write_file(text):
     "Write content to file"
-    file_title = file_name()
-    print(file_title, "file")
-    file = open(f'files/{file_title}.txt', 'w+')
+    file_name = f'files/{dt.now().strftime("%Y-%m-%d.%H-%M-%S")}.txt'
+    file = open(file_name, 'w+')
     file.write(text)
     file.close()
 
