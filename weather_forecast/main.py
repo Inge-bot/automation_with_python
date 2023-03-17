@@ -15,7 +15,7 @@ absolute_file_path = os.path.join(script_dir, relative_file_path)
 
 def get_weather(city):
     # Get weather forecast for specific city
-    weather_url = f'http://api.openweathermap.org/data/2.5/forecast?q={city}&appid={api_key}'
+    weather_url = f'http://api.openweathermap.org/data/2.5/forecast?q={city}&appid={api_key}&units=metric'
     content = requests.get(weather_url).text
     content_dict = json.loads(content)
 
@@ -33,3 +33,6 @@ def get_weather(city):
         file = open(absolute_file_path, 'a')
         file.write(city_weather)
         file.close()
+
+# call function
+get_weather('Amsterdam')
