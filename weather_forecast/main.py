@@ -27,11 +27,9 @@ def get_weather(city):
         time = w_entry['dt_txt']
         temperature = w_entry['main']['temp']
         condition = w_entry['weather'][0]['description']
-        # create string to append to file
-        city_weather = f'{city}, {time}, {temperature}, {condition}\n'
         # Append to file
         file = open(absolute_file_path, 'a')
-        file.write(city_weather)
+        file.write(f'{city}, {time}, {temperature}, {condition}\n')
         file.close()
 
 # call function
