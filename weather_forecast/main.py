@@ -1,20 +1,21 @@
-import requests
-import json
+"Module gets 3 hourly weather forecast for specific city for a period of several days"
 import os
+import json
+import requests
 from config import api_key
 
 # API keys are available from https://openweathermap.org/
 # Get the absolute path to the directory where the script is located
-script_dir = os.path.dirname(os.path.abspath(__file__))
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Define the relative path to the file
-relative_file_path = 'temp/data.txt'
+RELATIVE_FILE_PATH = 'temp/data.txt'
 
 # Combine the script directory and relative file path to get the absolute file path
-absolute_file_path = os.path.join(script_dir, relative_file_path)
+absolute_file_path = os.path.join(SCRIPT_DIR, RELATIVE_FILE_PATH)
 
 def get_weather(city):
-    # Get weather forecast for specific city
+    "Get weather forecast for specific city"
     weather_url = f'http://api.openweathermap.org/data/2.5/forecast?q={city}&appid={api_key}&units=metric'
     content = requests.get(weather_url).text
     content_dict = json.loads(content)
