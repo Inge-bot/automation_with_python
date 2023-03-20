@@ -11,8 +11,6 @@ def get_news(country):
     articles = news_content["articles"]
     news_results = []
     for article in articles:
-        # save returned results in the news_result list
-        # TODO add proper parsing
         news_results.append(f"Title\n{article['title']}, \nDESCRIPTION\n, {article['description']}")
     return news_results
 

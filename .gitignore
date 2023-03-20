@@ -6,9 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
-# variables
-variables.py
+# config
 config.py
+variables.py
 
 # Distribution / packaging
 .Python
