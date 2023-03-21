@@ -2,7 +2,8 @@
 from pathlib import Path
 
 def create_files(directory):
-    root_dir = Path('files')
+    "Create files in specific directory"
+    root_dir = Path(directory)
 
     for i in range(1,5):
         filename = f'{str(i)}.txt'
@@ -10,4 +11,4 @@ def create_files(directory):
         filepath.touch()
         print(filepath)
 
-create_files('file')
+create_files('files')
