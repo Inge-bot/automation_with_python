@@ -15,5 +15,3 @@ def add_prefix(file):
         path.rename(new_filepath)
 
     return file_paths
-
-print(add_prefix('files'))
