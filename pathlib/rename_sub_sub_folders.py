@@ -2,6 +2,7 @@
 from pathlib import Path
 
 def rename_files_subdirectory(directory):
+    "Iterate throught sub folders and rename files"
     root_dir = Path(directory)
     file_paths = root_dir.glob('**/*')
 
