@@ -11,9 +11,9 @@ def archive_files(directory):
     with zipfile.ZipFile(archive_path, 'w') as zf:
         # rewrite all directory filenames
         for path in root_dir.rglob("*.txt"):
-            print(path)
             # write zipfile
             zf.write(path)
             # delete original files
             path.unlink()
 
+# archive_files('files/2022')
