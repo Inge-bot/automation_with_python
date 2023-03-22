@@ -7,9 +7,7 @@ def delete_files(directory):
 
     for path in root_dir.glob("*.txt"):
         if path.is_file():
-            print(path)
         # write bytes to file
-        with open(path, 'wb') as file:
-            # print(path)
-            file.write(b'')
-        path.unlink()
+            with open(path, 'wb') as file:
+                file.write(b'')
+            path.unlink()

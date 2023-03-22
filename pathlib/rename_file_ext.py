@@ -7,6 +7,5 @@ def change_extensions(directory):
     # matches files in subdirs with the extension
     for path in root_dir.rglob('*.txt'):
         if path.is_file():
-            print(path)
             # change file extension
             path.rename(path.with_suffix('.txt'))
