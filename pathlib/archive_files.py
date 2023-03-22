@@ -15,5 +15,3 @@ def archive_files(directory):
             zf.write(path)
             # delete original files
             path.unlink()
-
-# archive_files('files/2022')

@@ -9,6 +9,3 @@ def create_files(directory):
         filename = f'{str(i)}.txt'
         filepath = root_dir/Path(filename)
         filepath.touch()
-        print(filepath)
-
-create_files('files')
