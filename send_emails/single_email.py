@@ -4,11 +4,10 @@ Send single email with gmail client.
 Add email account details in a variables.py file
 """
 import yagmail
-import os
 import variables
 
 SENDER = variables.EMAIL
-RECEIVER = variables.EMAIL
+RECEIVER = variables.RECEIVER
 
 def send_email():
     "Sends single email"
