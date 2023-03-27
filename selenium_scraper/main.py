@@ -40,4 +40,4 @@ if __name__ == '__main__':
         time.sleep(2)
         element = driver.find_element(by="xpath", value="/html/body/div[1]/div/h1[2]")
         return clean_text(element.text)
-print(main())
+    

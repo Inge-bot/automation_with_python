@@ -43,4 +43,3 @@ if __name__ == '__main__':
         driver.find_element(by="xpath", value="/html/body/nav/div/a").click()
         # print current url after logging in
         print(driver.current_url)
-print(main())

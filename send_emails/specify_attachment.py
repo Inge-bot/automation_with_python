@@ -15,15 +15,16 @@ def send_email():
 
     for index, row in df.iterrows():
         subject = "Email subject!"
+
         # create list to add attachment file
         contents = [f"""
         Dear {row['name']}
-        Here is the content of the email!
+        Please find this month's bill.
         Kind regards,
-        Jane Austin
-        """, 'attachment.txt']
+        Penny
+        """]
 
         yag = yagmail.SMTP(user=SENDER, password=variables.PASSWORD)
-        yag.send(to=row['email'], subject=subject, contents=contents)
-        
+        yag.send(to=row['email'], subject=subject, contents=contents, attachments=row['attachment'])
+
 send_email()
