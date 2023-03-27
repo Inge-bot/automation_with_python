@@ -1,8 +1,9 @@
 """
-Send email from Outlook
+Send an HTML email using MIMEMultipart
 """
 import smtplib
-from email.message import EmailMessage
+from email.mime.text import MIMEText # use to generate text type MIME documents
+from email.mime.multipart import MIMEMultipart
 import variables
 
 def outlook_email():
@@ -11,22 +12,27 @@ def outlook_email():
     RECEIVER = variables.RECEIVER
     PASSWORD = variables.PASSWORD_OUTLOOK
 
+    msg = MIMEMultipart()
+    msg['From'] = SENDER
+    msg['To'] = RECEIVER
+    msg['Subject'] = 'Hello from Outlook!'
+
     # create multiline message
-    message = """
+    body = """
+    <h3>Hey stranger</h3>
     Just wanted to say hi from my Outlook address.
     Catch you later!
     """
-    msg = EmailMessage()
-    msg.set_content(message)
-    msg['Subject'] = 'Hello from Outlook!'
-    msg['From'] = SENDER
-    msg['To'] = RECEIVER
 
+    mimetext = MIMEText(body, 'html') # set body to html format
+    msg.attach(mimetext)
+    print(mimetext)
     # start smtp server to send email
     server = smtplib.SMTP('smtp.office365.com', 587) # connect to port 587
     server.starttls() # start TLS encrypted protocol
     server.login(SENDER, PASSWORD)
     server.send_message(msg) # use msg library
+    print('email sent')
     server.quit()
 
 outlook_email()
