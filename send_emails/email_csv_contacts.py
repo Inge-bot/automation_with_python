@@ -13,7 +13,6 @@ def send_email():
     df = pandas.read_csv('contacts.csv')
 
     for index, row in df.iterrows():
-        print(row['email'])
         subject = "Email subject!"
         contents = f"""
         Dear {row['name']}
@@ -24,6 +23,5 @@ def send_email():
 
         yag = yagmail.SMTP(user=SENDER, password=variables.PASSWORD)
         yag.send(to=row['email'], subject=subject, contents=contents)
-        print("Email sent")
 
 send_email()

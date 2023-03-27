@@ -25,7 +25,6 @@ def send_email():
         if now.hour == 13 and now.minute == 7: # time when email is first sent
             yag = yagmail.SMTP(user=SENDER, password=variables.PASSWORD)
             yag.send(to=RECEIVER, subject=subject, contents=contents)
-            print("Email sent")
             time.sleep(60) # email reoccures every 60 seconds
 
 send_email()
