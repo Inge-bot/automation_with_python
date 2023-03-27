@@ -18,7 +18,7 @@ def send_email():
 
     for index, row in df.iterrows():
         name = row['name']
-        filename = name + 'txt'
+        filename = name + '.txt'
         amount = row['amount']
         receiver = row['email']
        
@@ -35,6 +35,6 @@ def send_email():
         """
         
         yag = yagmail.SMTP(user=SENDER, password=variables.PASSWORD)
-        yag.send(to=receiver, subject=subject, contents=contents, attachments=filename≈q
+        yag.send(to=receiver, subject=subject, contents=contents, attachments=filename)
        
 send_email()
