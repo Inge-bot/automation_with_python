@@ -1,4 +1,4 @@
-name,email,attachment
-Yaramo,yaramo8162@necktai.com,bill_1.txt
-Yoxe,yoxesoy102@necktai.com,bill_2.txt
-Inge, py3.141projects@gmail.com,bill_2.txt
+name,email,amount,attachment
+Yaramo,yaramo8162@necktai.com,25,bill_1.txt
+Yoxe,yoxesoy102@necktai.com,54,bill_2.txt
+Inge, py3.141projects@gmail.com,21,bill_2.txt

@@ -9,6 +9,7 @@ __pycache__/
 # config
 config.py
 variables.py
+contacts.csv
 
 # Distribution / packaging
 .Python
