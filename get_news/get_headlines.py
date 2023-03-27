@@ -13,5 +13,3 @@ def get_news(country):
     for article in articles:
         news_results.append(f"Title\n{article['title']}, \nDESCRIPTION\n, {article['description']}")
     return news_results
-
-print(get_news(country="za"))
